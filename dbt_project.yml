@@ -37,31 +37,5 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   my_new_project:
     # Applies to all files under models/example/
-   raw_stage:
-      tags:
-        - 'raw'
+    example:
       materialized: view
-      +schema: "{{env_var('DBT_TGT_SCHEMA') }}"
-    stage:
-      tags:
-        - 'stage'
-      enabled: true
-      materialized: view
-      +schema: "{{env_var('DBT_TGT_SCHEMA') }}"
-    raw_vault:
-      tags:
-        - 'raw_vault'
-      materialized: incremental
-      +schema: "{{env_var('DBT_TGT_SCHEMA') }}"
-      hubs:
-        tags:
-          - 'hub'
-      links:
-        tags:
-          - 'link'
-      sats:
-        tags:
-          - 'satellite'
-      t_links:
-        tags:
-          - 't_link'
