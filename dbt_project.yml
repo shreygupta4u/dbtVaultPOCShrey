@@ -40,18 +40,18 @@ models:
       tags:
         - 'raw'
       materialized: view
-      schema: "{{env_var('DBT_TGT_SCHEMA') }}"+"raw"
+      schema: "{{env_var('DBT_TGT_SCHEMA') }}"
     stage:
       tags:
         - 'stage'
       enabled: true
       materialized: view
-      +schema: "{{env_var('DBT_TGT_SCHEMA') }}"+"stage"
+      schema: "{{env_var('DBT_TGT_SCHEMA') }}"
     raw_vault:
       tags:
         - 'raw_vault'
       materialized: incremental
-      +schema: "{{env_var('DBT_TGT_SCHEMA') }}"+"raw_vault"
+      schema: "{{env_var('DBT_TGT_SCHEMA') }}"
       hubs:
         tags:
           - 'hub'
