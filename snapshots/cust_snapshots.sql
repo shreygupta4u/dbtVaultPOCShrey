@@ -4,8 +4,8 @@
         target_database='DBTVAULTORIGINAL',
         target_schema='DEMO_DEV',
         unique_key='CUSTOMER_PK',
-        strategy='timestamp',
-        updated_at='LOAD_DATE',
+        strategy='check',
+        check_cols = 'all'
         
         )
     }}
