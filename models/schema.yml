@@ -3,7 +3,7 @@ version: 2
 sources:
   - name: tpch_sample
     database: DBTVAULTORIGINAL
-    schema: SOURCE_DAY2
+    schema: SOURCE_DAY1
     tables:
       - name: LINEITEM
       - name: CUSTOMER
