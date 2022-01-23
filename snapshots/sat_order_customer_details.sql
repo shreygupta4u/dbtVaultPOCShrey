@@ -1,4 +1,4 @@
-{% snapshot cust_snapshot %}
+{% snapshot sat_order_customer_details %}
     {{
         config(
         target_database='DBTVAULTORIGINAL',
