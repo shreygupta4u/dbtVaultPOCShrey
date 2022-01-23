@@ -9,5 +9,5 @@
         
         )
     }}
-        select * from {{ ref('sat_order_customer_details') }}
+        select * from {{ ref('vw_sat_order_customer_details') }}
 {% endsnapshot %}
