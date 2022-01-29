@@ -23,7 +23,7 @@ SELECT
     d.N_REGIONKEY AS SUPPLIER_REGION_KEY,
     e.R_NAME AS SUPPLIER_REGION_NAME,
     e.R_COMMENT AS SUPPLIER_REGION_COMMENT
-    {{ batchid }}
+    {{ batchid() }}
 FROM {{ source('tpch_sample', 'PARTSUPP') }} AS a
 LEFT JOIN {{ source('tpch_sample', 'SUPPLIER') }} AS b
     ON a.PS_SUPPKEY = b.S_SUPPKEY

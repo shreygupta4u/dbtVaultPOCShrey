@@ -10,7 +10,7 @@ SELECT
         WHEN 1 THEN 'DR'
         WHEN 2 THEN 'CR'
     END AS VARCHAR(2)) AS TYPE
-    {{ batchid }}
+    {{ batchid() }}
 FROM {{ source('tpch_sample', 'ORDERS') }}  AS b
 LEFT JOIN {{ source('tpch_sample', 'CUSTOMER') }} AS c
     ON b.O_CUSTKEY = c.C_CUSTKEY
