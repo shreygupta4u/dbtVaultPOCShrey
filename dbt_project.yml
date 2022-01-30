@@ -35,6 +35,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 models:
+  +pre-hook:
+    - {{ jobentry() }}
   my_new_project:
     raw_stage:
       tags:

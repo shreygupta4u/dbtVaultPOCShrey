@@ -1,0 +1,4 @@
+{% macro jobentry() %}
+Insert into demo_dev.job (Stamp)
+Select CURRENT_DATE()
+{% endmacro %}
