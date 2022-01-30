@@ -1,4 +1,0 @@
-{% macro jobentry() %}
-Insert into demo_dev.job (Stamp, modelName)
-Select CURRENT_DATE(), "ModelName"
-{% endmacro %}
