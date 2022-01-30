@@ -36,7 +36,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   +pre-hook:
-    - "Select 1"
+    - "Insert into demo_dev.job (Stamp, modelName) Select CURRENT_DATE() {{ this }}"
   my_new_project:
     raw_stage:
       tags:
