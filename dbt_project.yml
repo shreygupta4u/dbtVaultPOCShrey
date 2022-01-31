@@ -36,7 +36,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   +pre-hook:
-  - "Insert into demo_dev.job (JobStartDateTime ,modelname, BatchId) Select SYSTIMESTAMP(),'{{ this }}','{{ invocation_id }}'"
+  - "{{auditJobStart()}}"
   +post-hook:
   - "{{auditJobEnd()}}"
   my_new_project:
