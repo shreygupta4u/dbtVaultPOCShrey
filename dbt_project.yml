@@ -38,7 +38,7 @@ models:
   +pre-hook:
   - "Insert into demo_dev.job (JobStartDateTime ,modelname, BatchId) Select SYSTIMESTAMP(),'{{ this }}','{{ invocation_id }}'"
   +post-hook:
-  - "update demo_dev.job SET JobEndDateTime=SYSTIMESTAMP() WHERE modelname='{{ this }}'"
+  - "{{auditJobEnd()}}"
   my_new_project:
     raw_stage:
       tags:
