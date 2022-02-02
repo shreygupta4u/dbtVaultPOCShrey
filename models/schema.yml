@@ -22,5 +22,5 @@ models:
           tests:
             - unique:
                 config:            
-                  severity: warn
+                  severity: fail
                   store_failures: true
