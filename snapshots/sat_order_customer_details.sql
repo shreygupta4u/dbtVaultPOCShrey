@@ -1,7 +1,7 @@
 {% snapshot sat_order_customer_details %}
     {{
         config(
-        target_database='DBTVAULTORIGINAL',
+        target_database='ShreyDBTPOC',
         target_schema='DEMO_DEV',
         unique_key='CUSTOMER_PK',
         strategy='check',
