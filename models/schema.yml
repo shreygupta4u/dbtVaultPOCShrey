@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: tpch_sample
-    database: DBTVAULTORIGINAL
+    database: ShreyDBTPOC
     schema: SOURCE_DAY2
     tables:
       - name: LINEITEM
