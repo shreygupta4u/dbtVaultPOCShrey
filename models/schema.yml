@@ -20,6 +20,6 @@ models:
     columns:
         - name: DISCOUNT
           tests:
-            - unique
-              config:            
+            - unique:
+                config:            
                   severity: warn
