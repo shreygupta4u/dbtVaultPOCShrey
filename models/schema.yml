@@ -13,3 +13,11 @@ sources:
       - name: PART
       - name: NATION
       - name: REGION
+
+
+models:
+  - name: raw_orders
+    columns:
+        - name: DISCOUNT
+          tests:
+            - unique
