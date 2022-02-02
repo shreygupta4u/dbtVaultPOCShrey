@@ -17,9 +17,9 @@ sources:
 
 models:
   - name: raw_orders
-    columns:
-        - name: DISCOUNT
-          tests:
-            - unique:
-                config:            
-                  store_failures: true
+    # columns:
+    #     - name: DISCOUNT
+          # tests:
+          #   - unique:
+          #       config:            
+          #         store_failures: false
