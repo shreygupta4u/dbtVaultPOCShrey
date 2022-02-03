@@ -1,0 +1,23 @@
+{%- call statement('GetMetricsCount', fetch_result=True) -%}
+    Select count(*) from Public.JobMetricsMaster
+    WHERE SourceTableName = {{this}} OR TargetTableName ={{this}}
+{%- endcall -%}
+{%- set getmetrics_count = load_result('GetMetricsCount')['data'][1][0] -%}
+
+{%- call statement('GetMetrics', fetch_result=True) -%}
+    Select JobMetricMasterName,JobMetricDescription,SourceTableName,TargetTableName,
+    SourceAttributeNames,
+    TargetAttributeNames, OperationName from Public.JobMetricsMaster
+    WHERE SourceTableName = {{this}} OR TargetTableName ={{this}}
+{%- endcall -%}
+{%- set getmetricsResult = load_result('GetMetrics') -%}
+{%- set getmetrics_data = states['data'] -%}
+
+
+{% for i in range(getmetrics_count) %}
+
+Select {{ getmetrics_data[i][6]}}
+from {{this}}
+
+{% endfor %}
+
