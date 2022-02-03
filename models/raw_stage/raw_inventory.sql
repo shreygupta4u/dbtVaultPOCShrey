@@ -1,6 +1,6 @@
 {{
   config(
-    post_hook=after_commit"{{auditJobEnd()}}"
+    post_hook=after_commit("{{auditJobEnd()}}")
   )
 }}
 SELECT
