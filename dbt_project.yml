@@ -38,7 +38,7 @@ models:
   +pre-hook:
   - "{{auditJobStart()}}"
   +post-hook:
-  - "{{auditJobEnd()}}"
+  - after_commit("{{auditJobEnd()}}")
   my_new_project:
     raw_stage:
       tags:
