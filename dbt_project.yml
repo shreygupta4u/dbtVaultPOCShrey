@@ -38,8 +38,7 @@ models:
   +pre-hook:
   - "{{auditJobStart()}}"
   +post-hook:
-    sql: "{{auditJobEnd()}}"
-    transaction: false
+  - "{{auditJobEnd()}}"
   my_new_project:
     raw_stage:
       tags:
