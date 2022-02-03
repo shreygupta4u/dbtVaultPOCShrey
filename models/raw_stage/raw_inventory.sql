@@ -1,3 +1,8 @@
+{{
+  config(
+    post_hook=after_commit("{{auditJobEnd()}}")
+  )
+}}
 SELECT
     a.PS_PARTKEY AS PARTKEY,
     a.PS_SUPPKEY AS SUPPLIERKEY,

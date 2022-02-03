@@ -37,8 +37,6 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   +pre-hook:
   - "{{auditJobStart()}}"
-  +post-hook:
-  - after_commit("{{auditJobEnd()}}")
   my_new_project:
     raw_stage:
       tags:
