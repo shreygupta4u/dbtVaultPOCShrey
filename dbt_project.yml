@@ -9,6 +9,7 @@ config-version: 2
 # This setting configures which "profile" dbt uses for this project.
 profile: 'default'
 
+
 vars:
   load_date: '1992-01-09'
   tpch_size: 1 #1, 10, 100, 1000, 10000
@@ -27,6 +28,15 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
+
+on-run-start:
+  - "{{ logging.create_audit_schema() }}"
+  - "{{ logging.create_audit_log_table() }}"
+  - "{{ logging.log_run_start_event() }}"
+
+
+on-run-end:
+  - "{{ logging.log_run_end_event() }}"
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
