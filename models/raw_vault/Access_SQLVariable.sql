@@ -1,5 +1,5 @@
 {{ config(
-    post_hook=[
+    pre_hook=[
       "{{SQLVariable_PreHook}}"
     ]
 ) }}
