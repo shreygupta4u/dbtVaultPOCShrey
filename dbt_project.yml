@@ -37,7 +37,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   +pre-hook:
-  # - "{{auditJobStart()}}"
+  - "{{auditJobStart()}}"
   my_new_project:
     raw_stage:
       tags:
