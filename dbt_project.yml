@@ -42,8 +42,17 @@ models:
     raw_stage:
       tags:
         - 'raw'
+        - 'raw1'
       materialized: view
       +schema: "{{env_var('DBT_TGT_SCHEMA') }}"
+      raw_orders:
+        tags:
+          - 'orders'
+        columns:
+        - name: ORDERKEY
+          tests:
+            - unique
+            - not_null
     stage:
       tags:
         - 'stage'
